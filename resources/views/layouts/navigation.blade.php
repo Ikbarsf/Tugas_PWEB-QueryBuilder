@@ -15,6 +15,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @can('admin')
+                    <x-nav-link :href="url('/admin/product/list-product')" :active="request()->routeIs('product.list-product')">
+                        {{ __('Produk') }}
+                    </x-nav-link>
+                    @endcan
+                    @can('customer')
+                    <x-nav-link :href="url('/customer/list-product')" :active="request()->routeIs('product.list-product')">
+                        {{ __('Produk') }}
+                    </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
